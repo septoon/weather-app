@@ -1,0 +1,14 @@
+{
+  "main.css": "/weather/static/css/main.b1707dd2.chunk.css",
+  "main.js": "/weather/static/js/main.9f1169dd.chunk.js",
+  "main.js.map": "/weather/static/js/main.9f1169dd.chunk.js.map",
+  "runtime~main.js": "/weather/static/js/runtime~main.6cff1e35.js",
+  "runtime~main.js.map": "/weather/static/js/runtime~main.6cff1e35.js.map",
+  "static/js/2.65aa1cca.chunk.js": "/weather/static/js/2.65aa1cca.chunk.js",
+  "static/js/2.65aa1cca.chunk.js.map": "/weather/static/js/2.65aa1cca.chunk.js.map",
+  "index.html": "/weather/index.html",
+  "precache-manifest.86f5aec6627251b7342c177aeac6df8b.js": "/weather/precache-manifest.86f5aec6627251b7342c177aeac6df8b.js",
+  "service-worker.js": "/weather/service-worker.js",
+  "static/css/main.b1707dd2.chunk.css.map": "/weather/static/css/main.b1707dd2.chunk.css.map",
+  "static/media/index.css": "/weather/static/media/weathericons-regular-webfont.ecaf8b48.svg"
+}
