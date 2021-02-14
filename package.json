@@ -2,7 +2,7 @@
   "name": "weather",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://septoon.github.io/weather/",
+  "homepage": "https://septoon.github.io/weather-app",
   "dependencies": {
     "axios": "^0.21.1",
     "react": "^17.0.1",
