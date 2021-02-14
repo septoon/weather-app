@@ -24,7 +24,6 @@ const weatherReducer = (state = initialState, action) => {
       return {...state, weatherCode: action.code}
     }
     case TOGGLE_FETCHING: {
-      debugger
       return {...state, fetching: action.isFetch}
     }
     default:
@@ -44,9 +43,9 @@ export const getAdress = () => async (dispatch) => {
 
 export const getTemp = () => async (dispatch) => {
   const response = await getTemperature()
+  dispatch(toggleIsFetching(false))
   dispatch(setTemperature(response.main.temp))
   dispatch(setWeatherCode(response.weather[0].id))
-  dispatch(toggleIsFetching(false))
 }
 
 export default weatherReducer

@@ -3,13 +3,12 @@ import WeatherIcon from "./WeatherIcon"
 import '../App.css';
 import { connect } from "react-redux";
 
-const Main = ({isFetching}) => {
-  // debugger
+const Main = (props) => {
+
+  const date = new Date()
+  const time = date.getHours()
   return (
-    // isFetching ?
-    // <div className="app">Загрузка...</div>
-    // :
-    <div className="app">
+    <div className="app" data-hour={time}>
         <WeatherIcon />
         <WeatherDetailsContainer />
     </div>

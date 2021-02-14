@@ -79,3 +79,7 @@
 .weather-details .temperature {
     font-size: 48px;
 }
+
+.none {
+    display: none;
+}
