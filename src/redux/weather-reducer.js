@@ -1,12 +1,16 @@
 import { getAdressData, getTemperature } from "../api/api"
 
 const SET_CITY = 'weather/SET_CITY'
+const SET_LAT = 'weather/SET_LAT'
+const SET_LON = 'weather/SET_LON'
 const SET_TEMPERATURE = 'weather/SET_TEMPERATURE'
 const SET_WEATHER_CODE = 'weather/SET_WEATHER_CODE'
 const TOGGLE_FETCHING = 'weather/TOGGLE_FETCHING'
 
 const initialState = {
-  city: '',
+  city: null,
+  lat: '',
+  lon: '',
   temperature: null,
   weatherCode: 803,
   fetching: true
@@ -16,6 +20,12 @@ const weatherReducer = (state = initialState, action) => {
   switch (action.type) {
     case SET_CITY: {
       return {...state, city: action.city}
+    }
+    case SET_LAT: {
+      return {...state, lat: action.lat}
+    }
+    case SET_LON: {
+      return {...state, lon: action.lon}
     }
     case SET_TEMPERATURE: {
       return {...state, temperature: action.temp}
@@ -31,7 +41,9 @@ const weatherReducer = (state = initialState, action) => {
   }
 }
 
-export const setCity = (city) => ({type: SET_CITY, city})
+const setCity = (city) => ({type: SET_CITY, city})
+const setLat = (lat) => ({type: SET_LAT, lat})
+const setLon = (lon) => ({type: SET_LON, lon})
 const setTemperature = (temp) => ({type: SET_TEMPERATURE, temp})
 const setWeatherCode = (code) => ({type: SET_WEATHER_CODE, code})
 export const toggleIsFetching = (isFetch) => ({type: TOGGLE_FETCHING, isFetch})
@@ -39,6 +51,8 @@ export const toggleIsFetching = (isFetch) => ({type: TOGGLE_FETCHING, isFetch})
 export const getAdress = () => async (dispatch) => {
   const response = await getAdressData()
   dispatch(setCity(response.city))
+  dispatch(setLat(response.latitude))
+  dispatch(setLon(response.longitude))
 }
 
 export const getTemp = () => async (dispatch) => {
@@ -46,6 +60,8 @@ export const getTemp = () => async (dispatch) => {
   dispatch(toggleIsFetching(false))
   dispatch(setTemperature(response.main.temp))
   dispatch(setWeatherCode(response.weather[0].id))
+  dispatch(setLat(response.coord.lat))
+  dispatch(setLon(response.coord.lon))
 }
 
 export default weatherReducer
