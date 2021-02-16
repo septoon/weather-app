@@ -1,22 +1,15 @@
-import React from 'react';
-import { connect } from 'react-redux';
 import './App.css';
-import Main from './components/Main'
+import WeatherDetailsContainer from './components/WeatherDetailsContainer';
+import WeatherIcon from './components/WeatherIcon';
 
-function App({city, latitude, longitude}) {
-    console.log(latitude.toString())
-    console.log(longitude)
+function App() {
+    const time = new Date().getHours()
     return (
-        <>
-            <Main /> 
-        </>
+        <div className="app" data-hour={time}>
+        <WeatherIcon />
+        <WeatherDetailsContainer />
+    </div>
     )
 }
 
-const mapStateToProps = (state) => ({
-    city: state.weatherData.city,
-    latitude: state.weatherData.lat,
-    longitude: state.weatherData.lon
-})
-
-export default connect(mapStateToProps, {}) (App)
+export default App

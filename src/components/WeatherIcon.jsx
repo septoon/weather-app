@@ -1,9 +1,7 @@
-import React from 'react';
 import {connect} from 'react-redux'
 
 const WeatherIcon = ({ weatherCode }) => {
-    const date = new Date();
-    const time = date.getHours();
+    const time = new Date().getHours()
     const timeOfDay = (time > 7 && time < 18) ? 'day' : 'night';
     const className = `weather-icon wi wi-owm-${timeOfDay}-${weatherCode}`;
 
