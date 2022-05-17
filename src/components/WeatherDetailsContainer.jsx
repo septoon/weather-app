@@ -1,11 +1,11 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import WeatherDetails from './WeatherDetails';
-import { getAdress, getTemp, toggleIsFetching } from '../redux/weather-reducer'
+import { getAddress, getTemp, toggleIsFetching } from '../redux/weather-reducer'
 
 class WeatherDetailsContainer extends React.Component {
     componentDidMount () {
-        this.props.getAdress()
+        this.props.getAddress()
         this.props.getTemp()
     }
 
@@ -25,4 +25,4 @@ const mapStateToProps = (state) => ({
     temperature: state.weatherData.temperature
 })
  
-export default connect(mapStateToProps, { getAdress, getTemp, toggleIsFetching }) (WeatherDetailsContainer);
+export default connect(mapStateToProps, { getAddress, getTemp, toggleIsFetching }) (WeatherDetailsContainer);

@@ -1,6 +1,6 @@
 import preloader from '../images/preloader.svg'
 
-function WeatherDetails({ city, temperature }) {
+const WeatherDetails = ({ city, temperature }) => {
     if (city === null || temperature === null) {
         return <div><img src={preloader} alt="Loading..." /></div>
     } else {
